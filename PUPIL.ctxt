@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PUPIL()
+comment1.params=dataItems
+comment1.target=void\ readPupilDetails(java.lang.String)
+numComments=2

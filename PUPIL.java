@@ -1,33 +1,39 @@
+//pupil
+// Kaitlyn Anderson
+import javax.swing.JOptionPane;
 
-/**
- * Write a description of class PUPIL here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class PUPIL
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class PUPIL
-     */
-    public PUPIL()
+ {
+    private String firstName;
+    private String surname;
+    private int mark;
+    
+        public PUPIL()
     {
-        // initialise instance variables
-        x = 0;
+        //intialise instance variables
+        firstName = "";
+        surname = "";
+        mark = 0;
+    
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    
+     public void readPupilDetails(String dataItems)
+   {
+    String[] rowItems = dataItems.split(",");
+    firstName = rowItems[0];
+    surname = rowItems[1];
+    mark = Integer.parseInt(rowItems[2]);
+   }
+   
+     public String writeDetails()
     {
-        // put your code here
-        return x + y;
+    String pupilData = "";
+    pupilData = pupilData.concat(firstName);
+    pupilData = pupilData.concat(",");
+    pupilData = pupilData.concat(surname);
+    pupilData = pupilData.concat(",");
+    pupilData = pupilData.concat(mark);
+    pupilData = pupilData.concat(",");
+    return pupilData;
     }
 }
