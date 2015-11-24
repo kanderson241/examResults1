@@ -17,7 +17,7 @@ public class FILEREADCSV
         fReader.close();
         
         String fileContent = String.valueOf(inBuffer);
-        return fileContent.split("/n");
+        return fileContent.split("\n");
     }
 }
         

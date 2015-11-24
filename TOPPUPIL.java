@@ -7,7 +7,7 @@ public class TOPPUPIL
      // array of MEMBER objects
         private PUPIL pupilList[];
         // number of members to be calculated after reading file
-        int noOfpupils;
+        int noOfPupils;
          FILEREADCSV EXAMdatafile;
     public TOPPUPIL()
     {
@@ -29,9 +29,21 @@ public class TOPPUPIL
         
           String[] dataRows = EXAMdatafile.readCSVtable();
            // calculate the number of member rows, skip headings
-          noOfpupils = dataRows.length - 1;
+          noOfPupils = dataRows.length - 1;
           
-          System.out.println("** " + noOfpupils + " rows read.\n\n");
+          System.out.println("** " + noOfPupils + " rows read.\n\n");
+          
+          //prepare array for pupils
+          
+          pupilList = new PUPIL[noOfPupils];
+          //create pupil objects and copy data
+          for (int i =0; i< noOfPupils; i++)
+          {
+              pupilList[i] = new PUPIL();
+              // adjust to skip headings
+              pupilList[i].readPupilDetails(dataRows[i+1]);
+            }
+              
 
 
     }
@@ -41,4 +53,28 @@ public class TOPPUPIL
         
     }
    
+     public void displayPupil() {
+      // Heading for the display
+      System.out.println("the pupil with the top mark is:\n");
+    System.out.println("the mark is:\n");
+    for  (int i = 0; i < noOfPupils; i++) {
+        pupilList[i].displayDetails();
+    }
+    // 2 blank line to separate this report from others.
+    System.out.print("\n\n\n");
+  
+
+     // alternative using toString (if available)
+ 
+    // Heading for the display
+    System.out.println("A listing of all applicants for the next year\n");
+
+    for  (int i = 0; i < noOfPupils; i++) {
+        // will use toString
+        System.out.println(pupilList[i]);
+    }
+    // 2 blank line to separate this report from others.
+    System.out.print("\n\n\n");
+   }
+
 }
