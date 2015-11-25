@@ -7,7 +7,7 @@ public class PUPIL
     private String firstName;
     private String surname;
     private int mark;
-    private int pupilDetails;
+    private int findMark;
     
     public PUPIL()
     {
@@ -38,15 +38,15 @@ public class PUPIL
     return pupilData;
   }
 
-    public float pupilDetails()
+    public float findMark()
   {
-    return pupilDetails;
+    return findMark;
   }
 
     public void displayDetails()
   {
     System.out.println("pupil: "+ firstName + " " + surname);
-    System.out.println(", mark is ");
+    System.out.println(", mark is " + mark);
     System.out.println();
   }
  }

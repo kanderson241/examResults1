@@ -50,7 +50,17 @@ public class TOPPUPIL
     
     public void findTopPupil()
     {
-        
+       for (int i = 0; i < noOfPupils; i++)
+       {
+        // decide if current item: member matches target: bmi
+        if ((pupilList[i].findMark()> 18.5) && (pupilList[i].findMark() < 25))
+        {
+
+            // *display the details for the member
+            pupilList[i].displayDetails();
+        }
+    }
+ 
     }
    
      public void displayPupil() {

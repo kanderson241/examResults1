@@ -16,7 +16,7 @@ public class FILEREADCSV
         int size = fReader.read(inBuffer);
         fReader.close();
         
-        String fileContent = String.valueOf(inBuffer);
+        String fileContent = String.valueOf(inBuffer).substring(0,size);
         return fileContent.split("\n");
     }
 }
