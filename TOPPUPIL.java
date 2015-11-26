@@ -19,7 +19,7 @@ public class TOPPUPIL
     public void processTopPupil() throws IOException
     {
       setUpPupilList();
-      findTopPupil();
+      findMark();
     }
     
     private void setUpPupilList() throws IOException
@@ -48,43 +48,45 @@ public class TOPPUPIL
 
     }
     
-    public void findTopPupil()
+    public void findMark()
     {
-       for (int i = 0; i < noOfPupils; i++)
-       {
-        // decide if current item: member matches target: bmi
-        if ((pupilList[i].findMark()> 18.5) && (pupilList[i].findMark() < 25))
+    int maxDataPosition = 0;
+    for (int i=1; i<20; i++){
+        
+        if(pupilList[i].findMark() <pupilList[maxDataPosition].findMark())
         {
-
-            // *display the details for the member
-            pupilList[i].displayDetails();
+            maxDataPosition = 1;
         }
     }
- 
-    }
-   
-     public void displayPupil() {
-      // Heading for the display
-      System.out.println("the pupil with the top mark is:\n");
-    System.out.println("the mark is:\n");
-    for  (int i = 0; i < noOfPupils; i++) {
-        pupilList[i].displayDetails();
-    }
-    // 2 blank line to separate this report from others.
-    System.out.print("\n\n\n");
+   }
+         public void displayPupil() {
+           // Heading for the display
+           System.out.println("the pupil with the top mark is:\n");
+           System.out.println("the mark is:\n");
+           for  (int i = 0; i < noOfPupils; i++) 
+            {
+                pupilList[i].displayDetails();
+          }
+         // 2 blank line to separate this report from others.
+         System.out.print("\n\n\n");
   
 
-     // alternative using toString (if available)
+         // alternative using toString (if available)
  
-    // Heading for the display
-    System.out.println("A listing of all applicants for the next year\n");
+         // Heading for the display
+            System.out.println("A listing of all pupilsd marks\n");
 
-    for  (int i = 0; i < noOfPupils; i++) {
-        // will use toString
-        System.out.println(pupilList[i]);
+        for  (int i = 0; i < noOfPupils; i++)
+        {
+            // will use toString
+            System.out.println(pupilList[i]);
+        }
+        // 2 blank line to separate this report from others.
+        System.out.print("\n\n\n");
+   
+
+     
     }
-    // 2 blank line to separate this report from others.
-    System.out.print("\n\n\n");
-   }
+  }
 
-}
+
