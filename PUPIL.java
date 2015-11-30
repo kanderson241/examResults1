@@ -38,7 +38,7 @@ public class PUPIL
     return pupilData;
   }
 
-    public float findMark()
+    public int findMark()
   {
     return findMark;
   }
