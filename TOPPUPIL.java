@@ -50,64 +50,38 @@ public class TOPPUPIL
         int maxDataPosition = 0;
 
         String fileContent = "";
-        for (int i=1; i<noOfPupils; i++){
+        for (int i=0; i<noOfPupils; i++){
 
-            if(pupilList[i].findMark() > maxDataPosition)
+            //compare current value with best value
+            if (pupilList[i].findMark() > pupilList[maxDataPosition].findMark()) 
             {
-                {
+                // update the position of the best value
+                maxDataPosition = i;
 
-                    //compare current value with best value
-
-                    if (dataList[i].findMark() < dataList[maxDataPosition].findMark()) 
-                    {
-                        // update the position of the best value
-                        maxDataPosition = i;
-
-                        // *join on next line of data for writing to file
-                        fileContent = fileContent.concat(pupilList[i].writeDetails());
-                    }
-                }
-
-                System.out.println("A listing of all pupils marks\n");
-
-                for  (int i = 0; i < noOfPupils; i++)
-                {
-                    // will use toString
-                    System.out.println(pupilList[i]);
-                }
-                // 2 blank line to separate this report from others.
-                System.out.print("\n\n\n");
-
-
-                // display the final count: bmi
-                System.out.println("\n The top pupil is : " + count);
-                // A blank line to separate this report from others.
-                System.out.println();
-
-                // *send for writing to file as a string containing all data
-                System.out.println("** Preparing to write data file.");
-                resultFile.writeCSVtable(fileContent);
-
-                System.out.println("** File written and closed.");
             }
 
-            public void displayPupil() 
-            {
-                // Heading for the display
-                System.out.println("the pupil with the top mark is:\n");
-                System.out.println("the mark is:\n");
-                for  (int i = 0; i < noOfPupils; i++) 
-                {
-                    pupilList[i].displayDetails();
-                }
-                // 2 blank line to separate this report from others.
-                System.out.print("\n\n\n");
-
-                // alternative using toString (if available)
-                // Heading for the display
-
-            }
         }
+        
+        System.out.print("Position is:" + maxDataPosition + " , Value is:");
+        pupilList[maxDataPosition].displayDetails();
+        System.out.println();
+    }
+
+    public void displayPupil()
+    {
+
+        // Heading for the display
+        System.out.println("the pupil with the top mark is:\n");
+        System.out.println("the mark is:\n");
+        for  (int i = 0; i < noOfPupils; i++) 
+        {
+            pupilList[i].displayDetails();
+        }
+        // 2 blank line to separate this report from others.
+        System.out.print("\n\n\n");
+
+        // alternative using toString (if available)
+        // Heading for the display
 
     }
 }
