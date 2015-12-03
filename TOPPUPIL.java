@@ -61,18 +61,21 @@ public class TOPPUPIL
             }
 
         }
-        
+
         System.out.print("Position is:" + maxDataPosition + " , Value is:");
         pupilList[maxDataPosition].displayDetails();
         System.out.println();
+        fileContent.concat(pupilList[i].writeDetails());
+        System.out.println("** Preparing to write data file.");
+        resultFile.writeCSVtable(fileContent);
+        System.out.println("** File written and closed.");
     }
 
     public void displayPupil()
     {
 
         // Heading for the display
-        System.out.println("the pupil with the top mark is:\n");
-        System.out.println("the mark is:\n");
+
         for  (int i = 0; i < noOfPupils; i++) 
         {
             pupilList[i].displayDetails();

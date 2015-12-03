@@ -40,7 +40,7 @@ public class PUPIL
 
     public int findMark()
   {
-    return findMark;
+    return mark;
   }
 
     public void displayDetails()
