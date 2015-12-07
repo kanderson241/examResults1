@@ -34,7 +34,6 @@ public class PUPIL
     pupilData = pupilData.concat(surname);
     pupilData = pupilData.concat(",");
     pupilData = pupilData.concat(Integer.toString(mark));
-    pupilData = pupilData.concat(",");
     return pupilData;
   }
 
