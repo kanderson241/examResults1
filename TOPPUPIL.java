@@ -56,7 +56,7 @@ public class TOPPUPIL
             if (pupilList[i].findMark() > pupilList[maxDataPosition].findMark()) 
             {
                 // update the position of the best value
-                maxDataPosition = i;
+                maxDataPosition = i;     
 
             }
 
@@ -65,7 +65,7 @@ public class TOPPUPIL
         System.out.print("Position is:" + maxDataPosition + " , Value is:");
         pupilList[maxDataPosition].displayDetails();
         System.out.println();
-        fileContent.concat(pupilList[i].writeDetails());
+        fileContent.concat(pupilList[maxDataPosition].writeDetails());
         System.out.println("** Preparing to write data file.");
         resultFile.writeCSVtable(fileContent);
         System.out.println("** File written and closed.");
